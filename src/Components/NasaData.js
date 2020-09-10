@@ -4,14 +4,14 @@ import NasaCard from "./NasaCard";
 
 function NasaData() {
 
-const [nasaInfo, setnasaInfo] = useState([]);
+const [nasaInfo, setNasaInfo] = useState([]);
 
 useEffect(() => {
 axios
 .get(`https://api.nasa.gov/planetary/apod?api_key=rDLuS1OxbD26VJPygpmoRhTKPA0l6bb4sIHGGQJi&date=2020-04-20`)
 .then(res => {
     console.log("Res data : ", res);
-    setnasaInfo(res.data);
+    setNasaInfo(res.data);
 })
 
 .catch(err => {
